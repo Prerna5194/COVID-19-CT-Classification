@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+
+<h2><center><b>AI Based Model for Covid Detection </b></centre></h2>
+
+<h3><center><b>Implemented using Keras and Tensorflow</b></centre></h3>
+
+<h4><center>Choose your X-Ray file and click on Predict to get your diagnosis.</centre></h4>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+    <center>
+        <label for="imageUpload" class="upload-label">
+            Select your X-Ray Image
+        </label></center>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+    <center>
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+    </center>
+        <div><center>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button></center>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+    <center>
+    <h3 id="result"></centre>
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
